@@ -1,2 +1,0 @@
-Coucou papa !
-Ceci est un message afin de tester la génération à partir d'un texte de mon choix. Je test donc avec ce texte complement aléatoire ne sert strictement à rien. Vive Python !
