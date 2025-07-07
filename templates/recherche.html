@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chaînes de markov : Mini projet de Guillem PRIEUR</title>
+    <link rel="stylesheet" href="http://projets.guillem.free.fr/flask/style.css"> <!--fichier css (disponible également dans le dossier "autres").-->
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200&display=swap" rel="stylesheet"> <!--police d'écriture-->
+</head>
+<body>
+    <form action="" method="POST">
+        <input type="hidden" name="form_id" value="f1">
+        <h1>Bonjour, je peux vous créer une phrase, pour cela,<br>veuillez saisir le premier mot :</h1>
+        <p>
+            Je veux générer un texte à partir du mot :
+            <input type="text" name="mot" id="mot">
+            <br>
+            Basé sur le livre :
+            <select name="source" id="source">
+                {% for enregistrement in li %}
+                    <option value={{enregistrement}}>{{enregistrement}}</option>
+                {% endfor %}
+            </select>
+            <br>
+            Mon texte doit faire :
+            <input type="number" value="100" name="nb_mots" id="nb_mots" min="10" max="150">
+            mots
+            <br>
+            Son intétéligence doit être :
+            <select name="intel" id="intel">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+            <input type="submit" value="Chercher">
+        </p>
+    </form>
+    {% if génération is not none %}
+        <div class="génération">
+            {{génération}}
+            <form action="" method="POST">
+                <input type="hidden" name="form_id" value="f2">
+                <input type="hidden" name="content" value="{{génération}}">
+                <input type="hidden" name="livre" value={{livre}}>
+                <input type="hidden" name="inteligence" value={{inteligence}}>
+                <input type="submit" class="continuer" value="poursuivre ?">
+            </form>
+        </div>
+    {% endif %}
+</body>
+</html>
