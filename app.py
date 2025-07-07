@@ -37,5 +37,17 @@ def recherche():
 
     return render_template("recherche.html", génération=génération,li=listdir("./pickle"),livre=source,inteligence=inteligence)
 
+@app.route("/add",methods=['GET', 'POST'])
+def creer():
+    if request.method == "POST":
+        donnees = request.form
+        if donnees.get("form_id") == "f1":
+            texte = donnees.get("txt")
+            nom = donnees.get("nom")
+            with open(f"./textes/test_{nom}.txt", "w", encoding="utf-8") as f:
+                f.write(texte)
+            créer_graphe(f"test_{nom}.txt")
+    return render_template("ajouter.html")
+
 if __name__ == "__main__":
     app.run(debug=True)

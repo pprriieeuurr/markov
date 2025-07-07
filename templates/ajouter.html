@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adapter à un livre</title>
+    <link rel="stylesheet" href="http://projets.guillem.free.fr/flask/style.css"> <!--fichier css (disponible également dans le dossier "autres").-->
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200&display=swap" rel="stylesheet"> <!--police d'écriture-->
+</head>
+<body>
+    <form action="" method="POST" id="creer">
+        <input type="hidden" name="form_id" value="f1">
+        <h1>Bienvenue,<br>Je vais vous aider à tester le projet<br>sur le texte de votre choix !</h1>
+        <p>
+            Je souhaite que mon test se nomme :
+            <input type="text" name="nom" id="nom">
+            <br>
+            Et qu'il soit basé sur le texte suivant :
+            <br>
+            (Attention, le texte doit être le plus long possible, un livre entier est l'idéal !)
+            <br>
+            <textarea name="txt" id="txt" cols="100" rows="20"></textarea>
+            <br>
+            <input type="submit" value="Enregistrer le texte">
+        </p>
+    </form>
+</body>
+<script>
+    const form = document.getElementById('creer');
+    form.addEventListener('submit', function(event) {
+        if (form.txt.split(" ").length < 100) {
+            event.preventDefault(); // Empêche l'envoi du formulaire
+            alert("Le texte doit contenir au moins 100 mots.");
+        } else if (form.nom.value.trim() === "") {
+            event.preventDefault(); // Empêche l'envoi du formulaire
+            alert("Veuillez entrer un nom pour le test.");
+        } else {
+            
+        }
+    });
+</script>
+</html>

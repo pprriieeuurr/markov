@@ -130,7 +130,7 @@ class GrapheMarkov(Graphe):
                 trajets_possibles.append(trajet[-1]) # On ajoute le dernier élément.
         if trajets_possibles != []:
             return choice(trajets_possibles)
-        return choice(self.adj.keys()) # Si aucun élément n'as été trouvé, on retourne un noeud aléatoire.
+        return choice(list(self.adj.keys())) # Si aucun élément n'as été trouvé, on retourne un noeud aléatoire.
     def __str_from_liste(self,liste_parents:list[str],taille:int=15):
         """
         Permet d'obtenir une chaine de caractère d'un certain nombre de mots à partir d'une liste de mots de début.
