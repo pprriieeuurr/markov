@@ -9,7 +9,6 @@ Le problème en faisant ainsi est que les textes n'ont aucun sens. Une ruse cons
 ## Prérequis
 Pour utiliser ce projet, il faut avoir Python et installer (via pip) les bibliothèques ci-dessous :
 - tqdm
-- pickle
 - networkx
 - matplotlib
 - Flask
