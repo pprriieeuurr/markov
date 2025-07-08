@@ -16,7 +16,7 @@ Pour utiliser ce projet, il faut avoir Python et installer (via pip) les bibliot
 Pour installer et configurer le projet, il faut tout d'abord télécharger le code source de celui-ci.
 
 Ensuite, il faut installer les dépendances dans Python 3 (celles-ci sont détaillées dans **requirements.txt** et ci-dessus).
-Puis, il faut que vous exécutiez **projet.py** et que vous suiviez les étapes affichées.
+Puis, il faut que vous exécutiez **projet.py** et que vous suiviez les étapes affichées afin d'ajouter le livre **misérables1.txt** dans le programme.
 ## Utilisation
 L'utilisation du programme peut se faire de manière intuitive via l'interface Web ou directement par ligne de code, voici les étapes à suivre
 ### Via l'interface Web
